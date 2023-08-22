@@ -1,3 +1,3 @@
-export interface GalleryProps {
+export interface MainProps {
   img: string;
 }

@@ -1,12 +1,30 @@
 import React, { FC } from 'react';
-import { Button } from '@class101/ui';
 
 const Main: FC = () => {
   return (
     <div>
-      Main
-      <div>portfolio</div>
-      <Button>Button</Button>
+      Apple Developer Apple Developer Apple Developer Apple Developer Apple
+      Developer Apple Developer Apple Developer Apple Developer Apple Developer
+      Apple Developer Apple Developer Apple Developer Apple Developer Apple
+      Developer Apple Developer Apple Developer Apple Developer Apple Developer
+      Apple Developer Apple Developer Apple Developer Apple Developer Apple
+      Developer Apple Developer Apple Developer Apple Developer Apple Developer
+      Apple Developer Apple Developer Apple Developer Apple Developer Apple
+      Developer Apple Developer Apple Developer Apple Developer Apple Developer
+      Apple Developer Apple Developer Apple Developer Apple Developer Apple
+      Developer Apple Developer Apple Developer Apple Developer Apple Developer
+      Apple Developer Apple Developer
+      <div>
+        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
+        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
+        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
+        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
+        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
+        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
+        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
+        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
+        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
+      </div>
     </div>
   );
 };
