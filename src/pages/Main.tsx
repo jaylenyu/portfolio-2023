@@ -1,30 +1,10 @@
 import React, { FC } from 'react';
+import ScrollComponent from '../components/ScrollComponent';
 
 const Main: FC = () => {
   return (
     <div>
-      Apple Developer Apple Developer Apple Developer Apple Developer Apple
-      Developer Apple Developer Apple Developer Apple Developer Apple Developer
-      Apple Developer Apple Developer Apple Developer Apple Developer Apple
-      Developer Apple Developer Apple Developer Apple Developer Apple Developer
-      Apple Developer Apple Developer Apple Developer Apple Developer Apple
-      Developer Apple Developer Apple Developer Apple Developer Apple Developer
-      Apple Developer Apple Developer Apple Developer Apple Developer Apple
-      Developer Apple Developer Apple Developer Apple Developer Apple Developer
-      Apple Developer Apple Developer Apple Developer Apple Developer Apple
-      Developer Apple Developer Apple Developer Apple Developer Apple Developer
-      Apple Developer Apple Developer
-      <div>
-        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
-        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
-        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
-        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
-        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
-        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
-        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
-        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
-        Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio Portfolio
-      </div>
+      <ScrollComponent />
     </div>
   );
 };
