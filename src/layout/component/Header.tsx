@@ -17,14 +17,12 @@ const Header: FC = () => {
 export default Header;
 
 const HeaderWrap = styled.div`
-  display: flex;
-  justify-content: space-between;
+  ${({ theme }) => theme.flexBox('space-between', 'center', undefined)};
   position: sticky;
   top: 0;
   height: 4rem;
   background-color: #f5f5f7;
   z-index: 100;
-  align-items: center;
   padding: 0px 20px;
 `;
 
