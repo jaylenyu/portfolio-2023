@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { styled } from 'styled-components';
+import theme from '../style/theme';
 
 const Fourth: FC = () => {
   return (
@@ -15,19 +16,21 @@ const Fourth: FC = () => {
                   <img src={img} />
                 </ProjectImageBox>
                 <ProjectInfo>
-                  <span>{title}</span>
-                  <ProjectText>{date}</ProjectText>
-                  <SkillBox>
-                    {skill.map(el => (
-                      <SkillCard>{el}</SkillCard>
-                    ))}
-                  </SkillBox>
-                  <WorkList>
-                    구현 내용
-                    {contents.map(el => (
-                      <li>{el}</li>
-                    ))}
-                  </WorkList>
+                  <div>
+                    <span>{title}</span>
+                    <ProjectText>{date}</ProjectText>
+                    <SkillBox>
+                      {skill.map(el => (
+                        <SkillCard>{el}</SkillCard>
+                      ))}
+                    </SkillBox>
+                    <WorkList>
+                      구현 내용
+                      {contents.map(el => (
+                        <li>{el}</li>
+                      ))}
+                    </WorkList>
+                  </div>
                   <ButtonBox>
                     <Button>자세히 보기</Button>
                   </ButtonBox>
@@ -49,22 +52,31 @@ const FourthWrap = styled.div`
   padding: 0px 100px;
   margin-bottom: 10rem;
   border-bottom: 1px solid black;
+  height: 100%;
 `;
 
 const FourthTitle = styled.div`
   font-size: 5rem;
   color: #333;
   margin-bottom: 10rem;
+  @media screen and ${({ theme }) => theme.tablet} {
+    font-size: 4rem;
+  }
 `;
 
-const ProjectContainer = styled.div``;
+const ProjectContainer = styled.div`
+  height: 100%;
+`;
 
 const ProjectWrap = styled.div`
   padding: 50px;
   background-color: #fafafa;
   width: inherit;
-  height: 30rem;
+  height: 100%;
   margin-bottom: 3rem;
+  @media screen and ${({ theme }) => theme.tablet} {
+    height: 100%;
+  }
 `;
 
 const ProjectTitle = styled.div`
@@ -73,10 +85,21 @@ const ProjectTitle = styled.div`
   justify-content: center;
   margin-bottom: 5rem;
   font-size: 3rem;
+
+  @media screen and ${({ theme }) => theme.mobile} {
+    font-size: 2rem;
+  }
 `;
 
 const ProjectContents = styled.div`
   display: flex;
+
+  @media screen and ${({ theme }) => theme.tablet} {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+  }
 `;
 
 const ProjectImageBox = styled.div`
@@ -86,14 +109,27 @@ const ProjectImageBox = styled.div`
   img {
     width: 100%;
   }
+  @media screen and ${({ theme }) => theme.tablet} {
+    height: auto;
+    width: auto;
+  }
 `;
 
 const ProjectInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 20rem;
   width: 50%;
   letter-spacing: 1px;
   line-height: 1.8rem;
   margin-left: 5rem;
+  @media screen and ${({ theme }) => theme.tablet} {
+    margin-top: 5rem;
+  }
+  @media screen and ${({ theme }) => theme.mobile} {
+    margin-top: 2rem;
+  }
 `;
 
 const ProjectText = styled.span`
