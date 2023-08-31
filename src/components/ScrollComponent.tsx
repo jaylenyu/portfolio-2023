@@ -3,13 +3,12 @@ import {
   ScrollContainer,
   ScrollPage,
   Animator,
-  Sticky,
-  Fade
+  Sticky
 } from 'react-scroll-motion';
-import First from './First';
-import Second from './Second';
-import Third from './Third';
-import Fourth from './Fourth';
+import First from '../pages/First';
+import Second from '../pages/Second';
+import Third from '../pages/Third';
+import Portfolio from './Portfolio';
 
 const ScrollComponent: FC = () => {
   return (
@@ -21,7 +20,8 @@ const ScrollComponent: FC = () => {
         </Animator>
       </ScrollPage>
       <Second />
-      <Third />
+      <Third showFade={true} />
+      <Third showFade={false} />
       <div style={{ height: '30rem' }}>
         <ScrollPage>
           <Animator animation={Sticky()}>
@@ -29,7 +29,7 @@ const ScrollComponent: FC = () => {
           </Animator>
         </ScrollPage>
       </div>
-      <Fourth />
+      <Portfolio />
     </ScrollContainer>
   );
 };
