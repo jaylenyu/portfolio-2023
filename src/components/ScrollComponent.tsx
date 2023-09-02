@@ -21,7 +21,8 @@ const ScrollComponent: FC = () => {
         </Animator>
       </ScrollPage>
       <Second />
-      <Third />
+      <Third showFade={true} />
+      <Third showFade={false} />
       <div style={{ height: '30rem' }}>
         <ScrollPage>
           <Animator animation={Sticky()}>

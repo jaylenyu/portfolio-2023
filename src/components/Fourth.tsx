@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { styled } from 'styled-components';
 
 const Fourth: FC = () => {
@@ -12,22 +12,24 @@ const Fourth: FC = () => {
               <ProjectTitle>{name}</ProjectTitle>
               <ProjectContents>
                 <ProjectImageBox>
-                  <img src={img} />
+                  <img src={img} alt="project" />
                 </ProjectImageBox>
                 <ProjectInfo>
-                  <span>{title}</span>
-                  <ProjectText>{date}</ProjectText>
-                  <SkillBox>
-                    {skill.map(el => (
-                      <SkillCard>{el}</SkillCard>
-                    ))}
-                  </SkillBox>
-                  <WorkList>
-                    구현 내용
-                    {contents.map(el => (
-                      <li>{el}</li>
-                    ))}
-                  </WorkList>
+                  <div>
+                    <span>{title}</span>
+                    <ProjectText>{date}</ProjectText>
+                    <SkillBox>
+                      {skill.map(el => (
+                        <SkillCard>{el}</SkillCard>
+                      ))}
+                    </SkillBox>
+                    <WorkList>
+                      구현 내용
+                      {contents.map(el => (
+                        <li>{el}</li>
+                      ))}
+                    </WorkList>
+                  </div>
                   <ButtonBox>
                     <Button>자세히 보기</Button>
                   </ButtonBox>
@@ -49,51 +51,118 @@ const FourthWrap = styled.div`
   padding: 0px 100px;
   margin-bottom: 10rem;
   border-bottom: 1px solid black;
+  height: 100%;
+
+  @media screen and ${({ theme }) => theme.tablet} {
+    padding: 0px 50px;
+  }
+
+  @media screen and ${({ theme }) => theme.mobile} {
+    padding: 0px 10px;
+  }
 `;
 
 const FourthTitle = styled.div`
   font-size: 5rem;
   color: #333;
   margin-bottom: 10rem;
+
+  @media screen and ${({ theme }) => theme.tablet} {
+    font-size: 4rem;
+    margin-bottom: 5rem;
+  }
+
+  @media screen and ${({ theme }) => theme.mobile} {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
 `;
 
-const ProjectContainer = styled.div``;
+const ProjectContainer = styled.div`
+  height: 100%;
+`;
 
 const ProjectWrap = styled.div`
   padding: 50px;
   background-color: #fafafa;
   width: inherit;
-  height: 30rem;
+  height: 100%;
   margin-bottom: 3rem;
+
+  @media screen and ${({ theme }) => theme.tablet} {
+    width: auto;
+    height: auto;
+  }
 `;
 
 const ProjectTitle = styled.div`
   display: flex;
   color: ${({ theme }) => theme.gray};
   justify-content: center;
-  margin-bottom: 5rem;
   font-size: 3rem;
+  margin-bottom: 5rem;
+
+  @media screen and ${({ theme }) => theme.tablet} {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  @media screen and ${({ theme }) => theme.mobile} {
+    margin-bottom: 3rem;
+  }
 `;
 
 const ProjectContents = styled.div`
   display: flex;
+  height: 100%;
+  width: 100%;
+
+  @media screen and ${({ theme }) => theme.tablet} {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+  }
 `;
 
 const ProjectImageBox = styled.div`
-  width: 50%;
-  height: 30rem;
+  height: 100%;
+  width: 100%;
 
   img {
+    height: 100%;
     width: 100%;
+  }
+
+  @media screen and ${({ theme }) => theme.tablet} {
+    height: auto;
+    width: auto;
   }
 `;
 
 const ProjectInfo = styled.div`
-  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
   width: 50%;
   letter-spacing: 1px;
   line-height: 1.8rem;
-  margin-left: 5rem;
+  margin-left: 3rem;
+
+  @media screen and ${({ theme }) => theme.tablet} {
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    margin-top: 3rem;
+    margin-left: 0;
+  }
+
+  @media screen and ${({ theme }) => theme.mobile} {
+    margin-top: 2rem;
+    width: 100%;
+  }
 `;
 
 const ProjectText = styled.span`
@@ -125,12 +194,13 @@ const SkillCard = styled.span`
 `;
 
 const ButtonBox = styled.div`
-  width: 100%;
+  width: 80%;
   height: 3rem;
   border-radius: 1rem;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.05);
   transition: background-color 0.3s;
+
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);
   }
