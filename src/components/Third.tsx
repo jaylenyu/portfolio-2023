@@ -10,18 +10,30 @@ import {
 import AboutMe from './AboutMe';
 import AboutMeInfo from './AboutMeInfo';
 import { styled } from 'styled-components';
+import { ShowFadeProps } from '../types/components';
 
-const Third: FC = () => {
+const Third: FC<ShowFadeProps> = ({ showFade }) => {
   return (
     <ScrollPage>
-      <AboutMeContainer>
-        <Animator animation={batch(Sticky(30), MoveIn(-1000, 0), Fade())}>
-          <AboutMe />
-        </Animator>
-        <Animator animation={batch(Sticky(60), MoveIn(1000, 0), Fade())}>
-          <AboutMeInfo />
-        </Animator>
-      </AboutMeContainer>
+      {showFade ? (
+        <AboutMeContainer>
+          <Animator animation={batch(Sticky(30), MoveIn(-1000, 0))}>
+            <AboutMe />
+          </Animator>
+          <Animator animation={batch(Sticky(60), MoveIn(1000, 0))}>
+            <AboutMeInfo />
+          </Animator>
+        </AboutMeContainer>
+      ) : (
+        <AboutMeContainer>
+          <Animator animation={batch(Sticky(30), MoveIn(0, 0), Fade())}>
+            <AboutMe />
+          </Animator>
+          <Animator animation={batch(Sticky(60), MoveIn(0, 0), Fade())}>
+            <AboutMeInfo />
+          </Animator>
+        </AboutMeContainer>
+      )}
     </ScrollPage>
   );
 };

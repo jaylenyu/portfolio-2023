@@ -1,6 +1,5 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { styled } from 'styled-components';
-import theme from '../style/theme';
 
 const Fourth: FC = () => {
   return (
@@ -13,7 +12,7 @@ const Fourth: FC = () => {
               <ProjectTitle>{name}</ProjectTitle>
               <ProjectContents>
                 <ProjectImageBox>
-                  <img src={img} />
+                  <img src={img} alt="project" />
                 </ProjectImageBox>
                 <ProjectInfo>
                   <div>
@@ -53,14 +52,29 @@ const FourthWrap = styled.div`
   margin-bottom: 10rem;
   border-bottom: 1px solid black;
   height: 100%;
+
+  @media screen and ${({ theme }) => theme.tablet} {
+    padding: 0px 50px;
+  }
+
+  @media screen and ${({ theme }) => theme.mobile} {
+    padding: 0px 10px;
+  }
 `;
 
 const FourthTitle = styled.div`
   font-size: 5rem;
   color: #333;
   margin-bottom: 10rem;
+
   @media screen and ${({ theme }) => theme.tablet} {
     font-size: 4rem;
+    margin-bottom: 5rem;
+  }
+
+  @media screen and ${({ theme }) => theme.mobile} {
+    font-size: 3rem;
+    margin-bottom: 3rem;
   }
 `;
 
@@ -74,8 +88,10 @@ const ProjectWrap = styled.div`
   width: inherit;
   height: 100%;
   margin-bottom: 3rem;
+
   @media screen and ${({ theme }) => theme.tablet} {
-    height: 100%;
+    width: auto;
+    height: auto;
   }
 `;
 
@@ -83,32 +99,42 @@ const ProjectTitle = styled.div`
   display: flex;
   color: ${({ theme }) => theme.gray};
   justify-content: center;
-  margin-bottom: 5rem;
   font-size: 3rem;
+  margin-bottom: 5rem;
+
+  @media screen and ${({ theme }) => theme.tablet} {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
 
   @media screen and ${({ theme }) => theme.mobile} {
-    font-size: 2rem;
+    margin-bottom: 3rem;
   }
 `;
 
 const ProjectContents = styled.div`
   display: flex;
+  height: 100%;
+  width: 100%;
 
   @media screen and ${({ theme }) => theme.tablet} {
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100%;
     align-items: center;
   }
 `;
 
 const ProjectImageBox = styled.div`
-  width: 50%;
-  height: 30rem;
+  height: 100%;
+  width: 100%;
 
   img {
+    height: 100%;
     width: 100%;
   }
+
   @media screen and ${({ theme }) => theme.tablet} {
     height: auto;
     width: auto;
@@ -119,16 +145,23 @@ const ProjectInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 20rem;
+  height: auto;
   width: 50%;
   letter-spacing: 1px;
   line-height: 1.8rem;
-  margin-left: 5rem;
+  margin-left: 3rem;
+
   @media screen and ${({ theme }) => theme.tablet} {
-    margin-top: 5rem;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    margin-top: 3rem;
+    margin-left: 0;
   }
+
   @media screen and ${({ theme }) => theme.mobile} {
     margin-top: 2rem;
+    width: 100%;
   }
 `;
 
@@ -161,12 +194,13 @@ const SkillCard = styled.span`
 `;
 
 const ButtonBox = styled.div`
-  width: 100%;
+  width: 80%;
   height: 3rem;
   border-radius: 1rem;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.05);
   transition: background-color 0.3s;
+
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);
   }

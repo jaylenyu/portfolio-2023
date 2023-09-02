@@ -7,3 +7,7 @@ export interface ProjectDataProps {
   skill: string[];
   contents: string[];
 }
+
+export interface ShowFadeProps {
+  showFade: boolean;
+}
