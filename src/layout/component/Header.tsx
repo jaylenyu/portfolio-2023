@@ -1,7 +1,23 @@
 import React, { FC, useState, useEffect } from 'react';
 import { styled } from 'styled-components';
 
-const Header: FC = () => {
+interface HeaderProps {
+  onMoveHome: () => void;
+  onMoveContact: () => void;
+  onMoveProject: () => void;
+  onMoveExperience: () => void;
+  onMoveSkill: () => void;
+  onMovePotential: () => void;
+}
+
+const Header: FC<HeaderProps> = ({
+  onMoveHome,
+  onMoveContact,
+  onMoveProject,
+  onMoveExperience,
+  onMoveSkill,
+  onMovePotential
+}) => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
   useEffect(() => {
@@ -24,9 +40,12 @@ const Header: FC = () => {
         <HeaderWrap>
           <h1>유정인의 포트폴리오</h1>
           <div>
-            {NAV_LIST.map(({ name, id }) => (
-              <NavBtn key={id}>{name}</NavBtn>
-            ))}
+            <NavBtn onClick={onMoveHome}>Main</NavBtn>
+            <NavBtn onClick={onMoveContact}>Contact</NavBtn>
+            <NavBtn onClick={onMoveProject}>Project</NavBtn>
+            <NavBtn onClick={onMoveExperience}>Experience</NavBtn>
+            <NavBtn onClick={onMoveSkill}>Skills</NavBtn>
+            <NavBtn onClick={onMovePotential}>Potential</NavBtn>
           </div>
         </HeaderWrap>
       )}
@@ -51,11 +70,3 @@ const NavBtn = styled.button`
   margin-left: 1rem;
   letter-spacing: 1px;
 `;
-
-const NAV_LIST = [
-  { id: 1, name: 'Main' },
-  { id: 2, name: 'Contact' },
-  { id: 3, name: 'Project' },
-  { id: 4, name: 'Skills' },
-  { id: 5, name: 'Potentail' }
-];

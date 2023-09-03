@@ -13,4 +13,8 @@ const Copyright = styled.p`
   text-align: center;
   font-size: 10px;
   border-top: 1px solid #c1c3d1;
+
+  @media screen and ${({ theme }) => theme.mobile} {
+    padding: 30px 0;
+  }
 `;

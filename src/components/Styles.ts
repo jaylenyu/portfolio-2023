@@ -16,17 +16,19 @@ export const CustomWrap = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0px 100px;
-  margin-top: 20rem;
+  margin-top: 5rem;
+  padding-top: 5rem;
   height: 100%;
 
   @media screen and ${({ theme }) => theme.tablet} {
-    margin-top: 10rem;
-    padding: 0px 50px;
+    margin-top: 5rem;
+    padding: 5rem 50px 0 50px;
   }
 
   @media screen and ${({ theme }) => theme.mobile} {
     margin-top: 5rem;
-    padding: 0px 10px;
+    padding-top: 3rem;
+    padding: 20px 10px;
   }
 `;
 
