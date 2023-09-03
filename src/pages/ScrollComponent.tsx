@@ -5,10 +5,13 @@ import {
   Animator,
   Sticky
 } from 'react-scroll-motion';
-import First from '../pages/First';
-import Second from '../pages/Second';
-import Third from '../pages/Third';
-import Portfolio from './Portfolio';
+import First from '../components/First';
+import Second from '../components/Second';
+import Third from '../components/Third';
+import Portfolio from '../components/Portfolio';
+import Experience from '../components/Experience';
+import Skill from '../components/Skill';
+import Potentail from '../components/Potential';
 
 const ScrollComponent: FC = () => {
   return (
@@ -30,6 +33,9 @@ const ScrollComponent: FC = () => {
         </ScrollPage>
       </div>
       <Portfolio />
+      <Experience />
+      <Skill />
+      <Potentail />
     </ScrollContainer>
   );
 };

@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { CustomLink } from './Styles';
+import { CustomLink } from '../Styles';
 import { styled } from 'styled-components';
 
 const AboutMeInfo: FC = () => {
   return (
-    <AboutMeInfoContainer>
+    <>
       <IntroContent>
         <dt>Contact</dt>
         <dd>Phone : 010-7775-2097</dd>
@@ -25,13 +25,11 @@ const AboutMeInfo: FC = () => {
           </CustomLink>
         </dd>
       </IntroContent>
-    </AboutMeInfoContainer>
+    </>
   );
 };
 
 export default AboutMeInfo;
-
-const AboutMeInfoContainer = styled.div``;
 
 const IntroContent = styled.dl`
   margin-top: 30px;
@@ -40,11 +38,24 @@ const IntroContent = styled.dl`
     margin-bottom: 10px;
     font-size: 2rem;
     font-weight: bold;
+
+    @media screen and ${({ theme }) => theme.tablet} {
+      font-size: 1.5rem;
+    }
+
+    @media screen and ${({ theme }) => theme.mobile} {
+      font-size: 1rem;
+      margin-left: 2rem;
+    }
   }
 
   dd {
     font-size: 1rem;
     padding-left: 24px;
     line-height: 2;
+
+    @media screen and ${({ theme }) => theme.mobile} {
+      font-size: 0.8rem;
+    }
   }
 `;

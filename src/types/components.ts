@@ -31,3 +31,10 @@ export type SkillIconType = {
   id: number;
   img: string;
 };
+
+export type StudyListType = {
+  id: number;
+  category: string;
+  title: string;
+  progress: string;
+};
