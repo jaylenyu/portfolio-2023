@@ -1,18 +1,20 @@
-import React, { FC } from 'react';
+import React, { FC, forwardRef } from 'react';
 import { ScrollPage, batch, Fade, Sticky } from 'react-scroll-motion';
 import { AnimatorBox } from './Styles';
 import { styled } from 'styled-components';
 
-const First: FC = () => {
+const First = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <ScrollPage>
-      <AnimatorBox animation={batch(Sticky(), Fade())}>
-        <FirstTitle>안녕하세요 !</FirstTitle>
-        <FirstText>프론트엔드 개발자 유정인입니다.</FirstText>
-      </AnimatorBox>
-    </ScrollPage>
+    <div ref={ref}>
+      <ScrollPage>
+        <AnimatorBox animation={batch(Sticky(), Fade())}>
+          <FirstTitle>안녕하세요 !</FirstTitle>
+          <FirstText>프론트엔드 개발자 유정인입니다.</FirstText>
+        </AnimatorBox>
+      </ScrollPage>
+    </div>
   );
-};
+});
 
 export default First;
 

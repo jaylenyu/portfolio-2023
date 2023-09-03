@@ -13,17 +13,35 @@ import Experience from '../components/Experience';
 import Skill from '../components/Skill';
 import Potentail from '../components/Potential';
 
-const ScrollComponent: FC = () => {
+interface ScrollComponentProps {
+  homeRef: React.RefObject<HTMLDivElement>;
+  contactRef: React.RefObject<HTMLDivElement>;
+  projectRef: React.RefObject<HTMLDivElement>;
+  experienceRef: React.RefObject<HTMLDivElement>;
+  skillRef: React.RefObject<HTMLDivElement>;
+  potentialRef: React.RefObject<HTMLDivElement>;
+}
+
+const ScrollComponent: FC<ScrollComponentProps> = ({
+  homeRef,
+  contactRef,
+  projectRef,
+  experienceRef,
+  skillRef,
+  potentialRef
+}) => {
   return (
     <ScrollContainer>
-      <First />
+      <First ref={homeRef} />
       <ScrollPage>
         <Animator animation={Sticky()}>
           <span />
         </Animator>
       </ScrollPage>
       <Second />
-      <Third showFade={true} />
+      <div ref={contactRef}>
+        <Third showFade={true} />
+      </div>
       <Third showFade={false} />
       <div style={{ height: '30rem' }}>
         <ScrollPage>
@@ -32,10 +50,18 @@ const ScrollComponent: FC = () => {
           </Animator>
         </ScrollPage>
       </div>
-      <Portfolio />
-      <Experience />
-      <Skill />
-      <Potentail />
+      <div ref={projectRef}>
+        <Portfolio />
+      </div>
+      <div ref={experienceRef}>
+        <Experience />
+      </div>
+      <div ref={skillRef}>
+        <Skill />
+      </div>
+      <div ref={potentialRef}>
+        <Potentail />
+      </div>
     </ScrollContainer>
   );
 };
