@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { styled } from 'styled-components';
 
 const Fourth: FC = () => {
@@ -46,8 +46,7 @@ const Fourth: FC = () => {
 export default Fourth;
 
 const FourthWrap = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${({ theme }) => theme.flexBox(undefined, undefined, 'column')};
   padding: 0px 100px;
   margin-bottom: 10rem;
   border-bottom: 1px solid black;
@@ -55,9 +54,12 @@ const FourthWrap = styled.div`
 
   @media screen and ${({ theme }) => theme.tablet} {
     padding: 0px 50px;
+    margin-bottom: 5rem;
   }
 
   @media screen and ${({ theme }) => theme.mobile} {
+    padding: 0px 10px;
+    margin-bottom: 1rem;
     padding: 0px 10px;
   }
 `;
@@ -74,7 +76,7 @@ const FourthTitle = styled.div`
 
   @media screen and ${({ theme }) => theme.mobile} {
     font-size: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -96,19 +98,18 @@ const ProjectWrap = styled.div`
 `;
 
 const ProjectTitle = styled.div`
-  display: flex;
+  ${({ theme }) => theme.flexBox('center', undefined, undefined)};
   color: ${({ theme }) => theme.gray};
-  justify-content: center;
   font-size: 3rem;
   margin-bottom: 5rem;
 
   @media screen and ${({ theme }) => theme.tablet} {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 
   @media screen and ${({ theme }) => theme.mobile} {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -118,11 +119,9 @@ const ProjectContents = styled.div`
   width: 100%;
 
   @media screen and ${({ theme }) => theme.tablet} {
-    display: flex;
-    flex-direction: column;
+    ${({ theme }) => theme.flexBox(undefined, 'center', 'column')};
     height: 100%;
     width: 100%;
-    align-items: center;
   }
 `;
 
@@ -142,9 +141,7 @@ const ProjectImageBox = styled.div`
 `;
 
 const ProjectInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  ${({ theme }) => theme.flexBox('space-between', undefined, 'column')};
   height: auto;
   width: 50%;
   letter-spacing: 1px;

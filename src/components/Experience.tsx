@@ -58,11 +58,11 @@ const Experience: FC = () => {
                 <ArticleWrap>
                   <ArticleTitle>{subTitle}</ArticleTitle>
                   {subDetail.map(el => (
-                    <CustomArticle>{el}</CustomArticle>
+                    <CustomArticle key={el}>{el}</CustomArticle>
                   ))}
                   <ArticleUL>
                     {subDetailList?.map(el => (
-                      <li>{el}</li>
+                      <li key={el}>{el}</li>
                     ))}
                   </ArticleUL>
                 </ArticleWrap>
@@ -108,6 +108,14 @@ const ExperienceImageBox = styled.div`
       width: 15rem;
     }
   }
+
+  @media screen and ${({ theme }) => theme.mobile} {
+    margin: 1rem 0;
+
+    img {
+      width: 10rem;
+    }
+  }
 `;
 
 const ExperienceGruop = styled.div`
@@ -116,6 +124,9 @@ const ExperienceGruop = styled.div`
 
   @media screen and ${({ theme }) => theme.tablet} {
     padding: 0 2rem;
+  }
+  @media screen and ${({ theme }) => theme.tablet} {
+    padding: 0 10px;
   }
 `;
 
@@ -132,10 +143,17 @@ const ExperienceHeader = styled.div``;
 const DateText = styled.div`
   color: ${({ theme }) => theme.lightGray};
   font-style: italic;
+  @media screen and ${({ theme }) => theme.tablet} {
+    font-size: 0.8rem;
+  }
 `;
 
 const ArticleWrap = styled.div`
   padding: 3rem 0;
+
+  @media screen and ${({ theme }) => theme.mobile} {
+    padding: 1rem 0;
+  }
 `;
 
 const ArticleTitle = styled.span`
@@ -144,8 +162,19 @@ const ArticleTitle = styled.span`
   @media screen and ${({ theme }) => theme.tablet} {
     font-size: 1rem;
   }
+  @media screen and ${({ theme }) => theme.mobile} {
+    font-size: 0.3rem;
+  }
 `;
 
 const ArticleUL = styled.ul`
   padding: 0 2rem;
+
+  @media screen and ${({ theme }) => theme.mobile} {
+    margin-top: 1rem;
+    li {
+      font-size: 0.6rem;
+      line-height: 1.2rem;
+    }
+  }
 `;

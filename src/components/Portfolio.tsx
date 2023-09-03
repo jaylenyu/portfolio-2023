@@ -38,7 +38,9 @@ const Portfolio: FC = () => {
                   <ProjectText>{date}</ProjectText>
                   <SkillBox>
                     {skill.map(el => (
-                      <SkillCard key={el}>{el}</SkillCard>
+                      <SkillCard content={el} key={el}>
+                        {el}
+                      </SkillCard>
                     ))}
                   </SkillBox>
                   <WorkList>
@@ -152,12 +154,45 @@ const SkillBox = styled.div`
 const SkillCard = styled.span`
   display: inline-block;
   padding: 5px 10px;
-  background-color: ${({ theme }) => theme.lightGray};
+  background-color: ${props =>
+    props.content === 'TypeScript'
+      ? '#007acd'
+      : props.content === 'JavaScript'
+      ? '#f7df1c'
+      : props.content === 'Sass'
+      ? '#cf6c9d'
+      : props.content === 'Styled-Components'
+      ? '#eb6893'
+      : props.content === 'React'
+      ? '#222222'
+      : 'white'};
   border-radius: 5px;
   margin: 0 5px 5px 0;
   font-size: 1rem;
-  color: #fafafa;
+  color: ${props =>
+    props.content === 'TypeScript'
+      ? 'white'
+      : props.content === 'JavaScript'
+      ? 'black'
+      : props.content === 'Sass'
+      ? 'white'
+      : props.content === 'Styled-Components'
+      ? 'white'
+      : props.content === 'React'
+      ? '#61d9fb'
+      : 'white'};
   box-sizing: border-box;
+
+  @media screen and ${({ theme }) => theme.tablet} {
+    margin: 0 5px 5px 0;
+    font-size: 1rem;
+  }
+
+  @media screen and ${({ theme }) => theme.mobile} {
+    padding: 3px 6px;
+    margin: 0 3px 3px 0;
+    font-size: 0.8rem;
+  }
 `;
 
 const GithubLink = styled(Link)`

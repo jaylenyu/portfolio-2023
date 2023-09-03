@@ -1,14 +1,8 @@
 import React, { FC } from 'react';
-import {
-  ScrollPage,
-  Animator,
-  batch,
-  Sticky,
-  MoveIn,
-  Fade
-} from 'react-scroll-motion';
-import AboutMe from './AboutMe';
-import AboutMeInfo from './AboutMeInfo';
+import { ScrollPage, batch, Sticky, MoveIn, Fade } from 'react-scroll-motion';
+import AboutMe from './contact/AboutMe';
+import AboutMeInfo from './contact/AboutMeInfo';
+import { AnimatorBox } from './Styles';
 import { styled } from 'styled-components';
 import { ShowFadeProps } from '../types/components';
 
@@ -17,21 +11,21 @@ const Third: FC<ShowFadeProps> = ({ showFade }) => {
     <ScrollPage>
       {showFade ? (
         <AboutMeContainer>
-          <Animator animation={batch(Sticky(30), MoveIn(-1000, 0))}>
+          <AnimatorBox animation={batch(Sticky(30), MoveIn(-1000, 0))}>
             <AboutMe />
-          </Animator>
-          <Animator animation={batch(Sticky(60), MoveIn(1000, 0))}>
+          </AnimatorBox>
+          <AnimatorBox animation={batch(Sticky(70), MoveIn(1000, 0))}>
             <AboutMeInfo />
-          </Animator>
+          </AnimatorBox>
         </AboutMeContainer>
       ) : (
         <AboutMeContainer>
-          <Animator animation={batch(Sticky(30), MoveIn(0, 0), Fade())}>
+          <AnimatorBox animation={batch(Sticky(30), MoveIn(0, 0), Fade())}>
             <AboutMe />
-          </Animator>
-          <Animator animation={batch(Sticky(60), MoveIn(0, 0), Fade())}>
+          </AnimatorBox>
+          <AnimatorBox animation={batch(Sticky(70), MoveIn(0, 0), Fade())}>
             <AboutMeInfo />
-          </Animator>
+          </AnimatorBox>
         </AboutMeContainer>
       )}
     </ScrollPage>
@@ -41,8 +35,6 @@ const Third: FC<ShowFadeProps> = ({ showFade }) => {
 export default Third;
 
 const AboutMeContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${({ theme }) => theme.flexBox('center', 'center', undefined)};
   height: 100%;
 `;

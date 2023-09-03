@@ -1,16 +1,36 @@
-import React, { FC } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { styled } from 'styled-components';
 
 const Header: FC = () => {
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <HeaderWrap>
-      <h1>LOGO</h1>
-      <NavWrap>
-        {NAV_LIST.map(({ name, id }) => (
-          <NavBtn key={id}>{name}</NavBtn>
-        ))}
-      </NavWrap>
-    </HeaderWrap>
+    <>
+      {windowWidth < 768 ? (
+        <></>
+      ) : (
+        <HeaderWrap>
+          <h1>유정인의 포트폴리오</h1>
+          <div>
+            {NAV_LIST.map(({ name, id }) => (
+              <NavBtn key={id}>{name}</NavBtn>
+            ))}
+          </div>
+        </HeaderWrap>
+      )}
+    </>
   );
 };
 
@@ -26,8 +46,6 @@ const HeaderWrap = styled.div`
   padding: 0px 20px;
 `;
 
-const NavWrap = styled.div``;
-
 const NavBtn = styled.button`
   color: #1d1d1f;
   margin-left: 1rem;
@@ -38,5 +56,6 @@ const NAV_LIST = [
   { id: 1, name: 'Main' },
   { id: 2, name: 'Contact' },
   { id: 3, name: 'Project' },
-  { id: 4, name: 'Skills' }
+  { id: 4, name: 'Skills' },
+  { id: 5, name: 'Potentail' }
 ];

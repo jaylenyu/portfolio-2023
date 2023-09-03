@@ -21,7 +21,7 @@ const Skill: FC = () => {
             <SkillTextContents>Github, Vercel, Trello</SkillTextContents>
             <SkillTextTitle>Studying</SkillTextTitle>
             <SkillTextContents>
-              Next.js, Tailwind CSS, Firebase, Node.js
+              Next.js, Tailwind CSS, Node.js
             </SkillTextContents>
           </SkillTextBox>
         </SkillTextWrap>
@@ -35,7 +35,7 @@ export default Skill;
 const SkillContainer = styled.div`
   ${({ theme }) => theme.flexBox(undefined, undefined, 'column')};
   padding: 100px;
-  margin-bottom: 20rem;
+  margin-top: 20rem;
   height: inherit;
   background-color: #fafafa;
 
@@ -44,27 +44,32 @@ const SkillContainer = styled.div`
   }
 
   @media screen and ${({ theme }) => theme.mobile} {
-    padding: 50px 10px;
+    margin-top: 5rem;
+    padding: 20px;
   }
 `;
 
 const SkillWrap = styled.div`
   display: flex;
   height: 100%;
+  @media screen and ${({ theme }) => theme.mobile} {
+    ${({ theme }) => theme.flexBox('center', 'center', 'column')};
+  }
 `;
 
 const SkillIconWrap = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
-  width: 50%;
+  width: 100%;
 
   @media screen and ${({ theme }) => theme.tablet} {
     grid-template-columns: repeat(3, 1fr);
   }
 
   @media screen and ${({ theme }) => theme.mobile} {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 `;
 
@@ -76,21 +81,22 @@ const SkillIcon = styled.div`
     width: 100%;
     border-radius: 20%;
     box-shadow: 2px 2px 5px 0px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   @media screen and ${({ theme }) => theme.tablet} {
     height: auto;
     width: auto;
   }
-
-  @media screen and ${({ theme }) => theme.mobile} {
-    height: auto;
-    width: auto;
-  }
 `;
 
 const SkillTextWrap = styled.div`
-  width: 50%;
+  width: 100%;
 `;
 
 const SkillTextBox = styled.div`

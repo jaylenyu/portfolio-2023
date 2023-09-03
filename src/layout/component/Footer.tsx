@@ -9,7 +9,8 @@ export default Footer;
 
 const Copyright = styled.p`
   width: 100%;
-  padding-bottom: 100px;
+  padding: 100px 0;
   text-align: center;
   font-size: 10px;
+  border-top: 1px solid #c1c3d1;
 `;
