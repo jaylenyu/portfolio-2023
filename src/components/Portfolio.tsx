@@ -158,6 +158,10 @@ const WorkList = styled.ul`
 
 const SkillBox = styled.div`
   margin-bottom: 3rem;
+
+  @media screen and ${({ theme }) => theme.mobile} {
+    margin-bottom: 1rem;
+  }
 `;
 
 const SkillCard = styled.span`
