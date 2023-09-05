@@ -33,7 +33,7 @@ const Portfolio: FC = () => {
                 <img src={img} alt="project" />
               </ProjectImageBox>
               <ProjectInfo>
-                <>
+                <div>
                   <span>{title}</span>
                   <ProjectText>{date}</ProjectText>
                   <SkillBox>
@@ -49,7 +49,7 @@ const Portfolio: FC = () => {
                       <li key={el}>{el}</li>
                     ))}
                   </WorkList>
-                </>
+                </div>
                 <GithubLink to={url}>
                   <Button>
                     <ButtonImageBox>
@@ -199,7 +199,7 @@ const SkillCard = styled.span`
       ? '#10172a'
       : 'white'};
   box-sizing: border-box;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 
   &:hover {
     transform: scale(1.05);
