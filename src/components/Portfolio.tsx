@@ -33,7 +33,7 @@ const Portfolio: FC = () => {
                 <img src={img} alt="project" />
               </ProjectImageBox>
               <ProjectInfo>
-                <div>
+                <>
                   <span>{title}</span>
                   <ProjectText>{date}</ProjectText>
                   <SkillBox>
@@ -49,7 +49,7 @@ const Portfolio: FC = () => {
                       <li key={el}>{el}</li>
                     ))}
                   </WorkList>
-                </div>
+                </>
                 <GithubLink to={url}>
                   <Button>
                     <ButtonImageBox>
@@ -123,7 +123,7 @@ const ProjectInfo = styled.div`
   @media screen and ${({ theme }) => theme.tablet} {
     height: 100%;
     width: 100%;
-    align-items: center;
+    align-items: flex-start;
     margin-top: 3rem;
     margin-left: 0;
   }
@@ -131,6 +131,7 @@ const ProjectInfo = styled.div`
   @media screen and ${({ theme }) => theme.mobile} {
     margin-top: 2rem;
     width: 100%;
+    padding: 0 20px;
   }
 `;
 
@@ -217,10 +218,6 @@ const GithubLink = styled(Link)`
   }
 
   @media screen and ${({ theme }) => theme.tablet} {
-    width: 80%;
-  }
-
-  @media screen and ${({ theme }) => theme.mobile} {
     width: 100%;
   }
 `;
