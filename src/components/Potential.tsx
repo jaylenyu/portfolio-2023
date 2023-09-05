@@ -55,10 +55,6 @@ const CommitBox = styled.div`
   img {
     width: 100%;
   }
-
-  @media screen and ${({ theme }) => theme.tablet} {
-    width: 80%;
-  }
 `;
 
 const Table = styled.table`
