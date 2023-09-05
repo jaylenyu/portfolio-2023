@@ -35,7 +35,7 @@ export default Skill;
 const SkillContainer = styled.div`
   ${({ theme }) => theme.flexBox(undefined, undefined, 'column')};
   padding: 100px;
-  margin-top: 20rem;
+  margin-top: 10rem;
   height: inherit;
   background-color: #fafafa;
 
