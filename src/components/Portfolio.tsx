@@ -81,7 +81,7 @@ const ProjectTitle = styled.div`
   }
 
   @media screen and ${({ theme }) => theme.mobile} {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -144,6 +144,14 @@ const WorkList = styled.ul`
   li {
     font-size: 14px;
     color: ${({ theme }) => theme.lightGray};
+  }
+
+  @media screen and ${({ theme }) => theme.mobile} {
+    margin-bottom: 1rem;
+
+    li {
+      font-size: 10px;
+    }
   }
 `;
 

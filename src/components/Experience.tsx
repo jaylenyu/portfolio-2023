@@ -163,7 +163,7 @@ const ArticleTitle = styled.span`
     font-size: 1rem;
   }
   @media screen and ${({ theme }) => theme.mobile} {
-    font-size: 0.3rem;
+    font-size: 0.8rem;
   }
 `;
 
