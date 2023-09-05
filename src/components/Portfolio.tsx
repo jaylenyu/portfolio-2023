@@ -174,6 +174,10 @@ const SkillCard = styled.span`
       ? '#eb6893'
       : props.content === 'React'
       ? '#222222'
+      : props.content === 'Next.js'
+      ? 'black'
+      : props.content === 'Tailwind CSS'
+      ? '#15becb'
       : 'white'};
   border-radius: 5px;
   margin: 0 5px 5px 0;
@@ -189,6 +193,10 @@ const SkillCard = styled.span`
       ? 'white'
       : props.content === 'React'
       ? '#61d9fb'
+      : props.content === 'Next.js'
+      ? 'white'
+      : props.content === 'Tailwind CSS'
+      ? '#10172a'
       : 'white'};
   box-sizing: border-box;
 
