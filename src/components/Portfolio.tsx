@@ -199,6 +199,11 @@ const SkillCard = styled.span`
       ? '#10172a'
       : 'white'};
   box-sizing: border-box;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   @media screen and ${({ theme }) => theme.tablet} {
     margin: 0 5px 5px 0;
