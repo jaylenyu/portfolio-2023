@@ -1,19 +1,18 @@
 import axios from 'axios';
 
-export async function getProjectData() {
+async function fetchData(url: string) {
   try {
-    const res = await axios.get('/data/ProjectList.json');
+    const res = await axios.get(url);
     return res.data.data;
   } catch (error) {
     return [];
   }
 }
 
+export async function getProjectData() {
+  return fetchData('/data/ProjectList.json');
+}
+
 export async function getExperienceData() {
-  try {
-    const res = await axios.get('/data/ExperienceList.json');
-    return res.data.data;
-  } catch (error) {
-    return [];
-  }
+  return fetchData('/data/ExperienceList.json');
 }
