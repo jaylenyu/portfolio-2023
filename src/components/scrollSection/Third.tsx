@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import { ScrollPage, batch, Sticky, MoveIn, Fade } from 'react-scroll-motion';
-import AboutMe from './contact/AboutMe';
-import AboutMeInfo from './contact/AboutMeInfo';
-import { AnimatorBox } from './Styles';
+import AboutMe from '../contact/AboutMe';
+import AboutMeInfo from '../contact/AboutMeInfo';
+import { AnimatorBox } from '../Styles';
 import { styled } from 'styled-components';
-import { ShowFadeProps } from '../types/components';
+import { ShowFadeProps } from '../../types/components';
 
 const Third: FC<ShowFadeProps> = ({ showFade }) => {
   return (

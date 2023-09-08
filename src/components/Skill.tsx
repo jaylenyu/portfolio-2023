@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React, { forwardRef } from 'react';
 import { styled } from 'styled-components';
 import { SkillIconType } from '../types/components';
 import { CustomTitle } from './Styles';
 
-const Skill: FC = () => {
+const Skill = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <SkillContainer>
+    <SkillContainer ref={ref}>
       <CustomTitle>Skills</CustomTitle>
       <SkillWrap>
         <SkillIconWrap>
@@ -28,7 +28,7 @@ const Skill: FC = () => {
       </SkillWrap>
     </SkillContainer>
   );
-};
+});
 
 export default Skill;
 

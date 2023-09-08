@@ -1,5 +1,4 @@
-import React, { FC, useState, useEffect } from 'react';
-import Axios from 'axios';
+import React, { forwardRef } from 'react';
 import { styled } from 'styled-components';
 import {
   CustomTitle,
@@ -8,28 +7,23 @@ import {
   CustomArticle,
   CustomLink
 } from './Styles';
-import { ExperienceDataProps } from '../types/components';
+import { useExperienceData } from '../hooks/useExperienceData';
 
-const Experience: FC = () => {
-  const [ExperienceData, setExperienceData] = useState([]);
+const Experience = forwardRef<HTMLDivElement>((props, ref) => {
+  const { error, isLoading, experienceData } = useExperienceData();
 
-  useEffect(() => {
-    const dataURL = '/data/ExperienceList.json';
-    Axios.get(dataURL)
-      .then(res => {
-        setExperienceData(res.data.data);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
-  const ExperienceList = ExperienceData as ExperienceDataProps[];
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
-    <CustomWrap>
+    <CustomWrap ref={ref}>
       <CustomTitle>Experience</CustomTitle>
-      {ExperienceList.map(
+      {experienceData.map(
         ({
           id,
           img,
@@ -49,12 +43,12 @@ const Experience: FC = () => {
                 <img src={img} alt="company" />
               </ExperienceImageBox>
               <ExperienceGruop>
-                <ExperienceHeader>
+                <div>
                   <ExperienceTitle>{title}</ExperienceTitle>
                   <CustomArticle>{part}</CustomArticle>
                   <DateText>{date}</DateText>
                   <CustomArticle>{detail}</CustomArticle>
-                </ExperienceHeader>
+                </div>
                 <ArticleWrap>
                   <ArticleTitle>{subTitle}</ArticleTitle>
                   {subDetail.map(el => (
@@ -74,7 +68,7 @@ const Experience: FC = () => {
       )}
     </CustomWrap>
   );
-};
+});
 
 export default Experience;
 
@@ -137,8 +131,6 @@ const ExperienceTitle = styled.div`
     font-size: 1.5rem;
   }
 `;
-
-const ExperienceHeader = styled.div``;
 
 const DateText = styled.div`
   color: ${({ theme }) => theme.lightGray};

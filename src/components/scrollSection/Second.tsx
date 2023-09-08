@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { ScrollPage, batch, Fade, Sticky } from 'react-scroll-motion';
-import { AnimatorBox } from './Styles';
+import { AnimatorBox } from '../Styles';
 import { styled } from 'styled-components';
 
 const Second: FC = () => {

@@ -1,6 +1,6 @@
-import React, { FC, forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 import { ScrollPage, batch, Fade, Sticky } from 'react-scroll-motion';
-import { AnimatorBox } from './Styles';
+import { AnimatorBox } from '../Styles';
 import { styled } from 'styled-components';
 
 const First = forwardRef<HTMLDivElement>((props, ref) => {
@@ -25,7 +25,7 @@ const FirstTitle = styled.h3`
   line-height: 10rem;
 
   @media screen and ${({ theme }) => theme.tablet} {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   @media screen and ${({ theme }) => theme.mobile} {
