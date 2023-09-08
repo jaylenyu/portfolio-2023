@@ -63,6 +63,7 @@ const HeaderWrap = styled.div`
   background-color: #f5f5f7;
   z-index: 100;
   padding: 0px 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.23);
 `;
 
 const NavBtn = styled.button`
