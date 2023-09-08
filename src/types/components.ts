@@ -47,12 +47,12 @@ export interface ExperienceDataProps {
   urlText: string;
 }
 
-export type SkillIconType = {
+export interface SkillIconProps {
   id: number;
   img: string;
 };
 
-export type StudyListType = {
+export interface StudyListProps {
   id: number;
   category: string;
   title: string;

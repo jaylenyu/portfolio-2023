@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { styled } from 'styled-components';
-import { SkillIconType } from '../types/components';
+import { SkillIconProps } from '../types/components';
 import { CustomTitle } from './Styles';
 
 const Skill = forwardRef<HTMLDivElement>((props, ref) => {
@@ -129,7 +129,7 @@ const SkillTextContents = styled.h4`
   }
 `;
 
-const SKILL_ICON: SkillIconType[] = [
+const SKILL_ICON: SkillIconProps[] = [
   { id: 1, img: '/images/javascript.png' },
   { id: 2, img: '/images/typescript.png' },
   { id: 3, img: '/images/react.png' },
