@@ -11,9 +11,7 @@ const Second: FC = () => {
         <SecondText>
           새로운 문제를 해결하며 성장하는 것에 큰 성취감을 느낍니다.
         </SecondText>
-        <SecondText>
-          사용자 경험을 중요시하고 늘 더 나은 방향으로 고민하는 것을 즐깁니다.
-        </SecondText>
+        <SecondText>늘 더 나은 방향으로 고민하는 것을 즐깁니다.</SecondText>
       </AnimatorBox>
     </ScrollPage>
   );
@@ -23,17 +21,16 @@ export default Second;
 
 const SecondTitle = styled.h3`
   ${({ theme }) => theme.flexBox('center', undefined, undefined)};
-  margin-bottom: 3rem;
+  margin-bottom: 10rem;
   font-size: 3rem;
-  line-height: 10rem;
 
   @media screen and ${({ theme }) => theme.tablet} {
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
     font-size: 2rem;
   }
 
   @media screen and ${({ theme }) => theme.mobile} {
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     font-size: 1.5rem;
   }
 `;
