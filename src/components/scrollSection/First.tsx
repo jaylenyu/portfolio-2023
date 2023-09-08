@@ -19,17 +19,18 @@ const First = forwardRef<HTMLDivElement>((props, ref) => {
 export default First;
 
 const FirstTitle = styled.h3`
-  ${({ theme }) => theme.flexBox('center', undefined, undefined)};
-  margin-bottom: 3rem;
+  ${({ theme }) => theme.flexBox('center', 'center', undefined)};
+  margin-bottom: 10rem;
   font-size: 5rem;
-  line-height: 10rem;
 
   @media screen and ${({ theme }) => theme.tablet} {
     font-size: 3rem;
+    margin-bottom: 5rem;
   }
 
   @media screen and ${({ theme }) => theme.mobile} {
     font-size: 2rem;
+    margin-bottom: 3rem;
   }
 `;
 
