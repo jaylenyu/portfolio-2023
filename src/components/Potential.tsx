@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { styled } from 'styled-components';
 import { CustomWrap, CustomTitle, CustomArticle } from './Styles';
-import { StudyListType } from '../types/components';
+import { StudyListProps } from '../types/components';
 
 const Potential = forwardRef<HTMLDivElement>((props, ref) => {
   return (
@@ -144,7 +144,7 @@ const Table = styled.table`
   }
 `;
 
-const STUDY_LIST: StudyListType[] = [
+const STUDY_LIST: StudyListProps[] = [
   {
     id: 1,
     category: '도서',
