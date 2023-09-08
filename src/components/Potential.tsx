@@ -59,6 +59,7 @@ const CommitBox = styled.div`
 
 const Table = styled.table`
   ${({ theme }) => theme.flexBox('center', 'center', 'column')};
+  box-shadow: ${({ theme }) => theme.shadow};
 
   th {
     color: #d5dde5;

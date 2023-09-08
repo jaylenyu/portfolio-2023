@@ -55,6 +55,7 @@ export const SectionWrap = styled.section`
   height: 100%;
   margin-bottom: 3rem;
   border-radius: 1rem;
+  box-shadow: ${({ theme }) => theme.shadow};
 
   @media screen and ${({ theme }) => theme.tablet} {
     width: auto;

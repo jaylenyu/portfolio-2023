@@ -80,7 +80,7 @@ const SkillIcon = styled.div`
   img {
     width: 100%;
     border-radius: 20%;
-    box-shadow: 2px 2px 5px 0px;
+    box-shadow: ${({ theme }) => theme.shadow};
     overflow: hidden;
     transition: all 0.2s ease;
 
