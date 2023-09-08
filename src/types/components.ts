@@ -50,11 +50,11 @@ export interface ExperienceDataProps {
 export interface SkillIconProps {
   id: number;
   img: string;
-};
+}
 
 export interface StudyListProps {
   id: number;
   category: string;
   title: string;
   progress: string;
-};
+}
