@@ -39,7 +39,10 @@ const Header: FC<HeaderProps> = ({
         <></>
       ) : (
         <HeaderWrap>
-          <h1>유정인의 포트폴리오</h1>
+          <HeaderBox>
+            <img src="/images/star.png" alt="star" />
+            <h1>유정인의 포트폴리오</h1>
+          </HeaderBox>
           <NavContainer>
             {navItems.map((item, index) => (
               <NavBtn key={index} onClick={item.onClick}>
@@ -64,6 +67,17 @@ const HeaderWrap = styled.div`
   z-index: 100;
   padding: 0px 20px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.23);
+`;
+
+const HeaderBox = styled.div`
+  ${({ theme }) => theme.flexBox('', 'center', undefined)};
+
+  img {
+    width: 1rem;
+  }
+  h1 {
+    margin-left: 2px;
+  }
 `;
 
 const NavContainer = styled.div`
