@@ -1,30 +1,24 @@
-import React, { FC, useEffect, useState } from 'react';
-import Axios from 'axios';
-import { ProjectDataProps } from '../types/components';
+import React, { forwardRef } from 'react';
 import { styled } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { CustomTitle, CustomWrap, SectionWrap } from './Styles';
+import { useProjectData } from '../hooks/useProjectData';
 
-const Portfolio: FC = () => {
-  const [projectData, setProjectData] = useState([]);
+const Portfolio = forwardRef<HTMLDivElement>((props, ref) => {
+  const { error, isLoading, projectData } = useProjectData();
 
-  useEffect(() => {
-    const dataURL = '/data/ProjectList.json';
-    Axios.get(dataURL)
-      .then(res => {
-        setProjectData(res.data.data);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
-  const projectList = projectData as ProjectDataProps[];
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
-    <CustomWrap>
+    <CustomWrap ref={ref}>
       <CustomTitle>Projects</CustomTitle>
-      {projectList.map(
+      {projectData.map(
         ({ id, name, img, title, date, skill, contents, url }) => (
           <SectionWrap key={id}>
             <ProjectTitle>{name}</ProjectTitle>
@@ -65,7 +59,7 @@ const Portfolio: FC = () => {
       )}
     </CustomWrap>
   );
-};
+});
 
 export default Portfolio;
 

@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React, { forwardRef } from 'react';
 import { styled } from 'styled-components';
 import { CustomWrap, CustomTitle, CustomArticle } from './Styles';
 import { StudyListType } from '../types/components';
 
-const Potential: FC = () => {
+const Potential = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <CustomWrap>
+    <CustomWrap ref={ref}>
       <CustomTitle>Potential</CustomTitle>
       <PotentialWrap>
         <CommitBox>
@@ -39,7 +39,7 @@ const Potential: FC = () => {
       </PotentialWrap>
     </CustomWrap>
   );
-};
+});
 
 export default Potential;
 

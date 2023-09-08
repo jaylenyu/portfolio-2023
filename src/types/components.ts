@@ -1,3 +1,23 @@
+import React from 'react';
+
+export interface ScrollComponentProps {
+  homeRef: React.RefObject<HTMLDivElement>;
+  contactRef: React.RefObject<HTMLDivElement>;
+  projectRef: React.RefObject<HTMLDivElement>;
+  experienceRef: React.RefObject<HTMLDivElement>;
+  skillRef: React.RefObject<HTMLDivElement>;
+  potentialRef: React.RefObject<HTMLDivElement>;
+}
+
+export interface HeaderProps {
+  onMoveHome: () => void;
+  onMoveContact: () => void;
+  onMoveProject: () => void;
+  onMoveExperience: () => void;
+  onMoveSkill: () => void;
+  onMovePotential: () => void;
+}
+
 export interface ProjectDataProps {
   id: number;
   name: string;

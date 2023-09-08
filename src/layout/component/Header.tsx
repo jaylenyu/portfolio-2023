@@ -1,14 +1,6 @@
 import React, { FC, useState, useEffect } from 'react';
+import { HeaderProps } from '../../types/components';
 import { styled } from 'styled-components';
-
-interface HeaderProps {
-  onMoveHome: () => void;
-  onMoveContact: () => void;
-  onMoveProject: () => void;
-  onMoveExperience: () => void;
-  onMoveSkill: () => void;
-  onMovePotential: () => void;
-}
 
 const Header: FC<HeaderProps> = ({
   onMoveHome,
@@ -32,6 +24,15 @@ const Header: FC<HeaderProps> = ({
     };
   }, []);
 
+  const navItems = [
+    { label: 'Main', onClick: onMoveHome },
+    { label: 'Contact', onClick: onMoveContact },
+    { label: 'Project', onClick: onMoveProject },
+    { label: 'Experience', onClick: onMoveExperience },
+    { label: 'Skills', onClick: onMoveSkill },
+    { label: 'Potential', onClick: onMovePotential }
+  ];
+
   return (
     <>
       {windowWidth < 768 ? (
@@ -39,14 +40,13 @@ const Header: FC<HeaderProps> = ({
       ) : (
         <HeaderWrap>
           <h1>유정인의 포트폴리오</h1>
-          <div>
-            <NavBtn onClick={onMoveHome}>Main</NavBtn>
-            <NavBtn onClick={onMoveContact}>Contact</NavBtn>
-            <NavBtn onClick={onMoveProject}>Project</NavBtn>
-            <NavBtn onClick={onMoveExperience}>Experience</NavBtn>
-            <NavBtn onClick={onMoveSkill}>Skills</NavBtn>
-            <NavBtn onClick={onMovePotential}>Potential</NavBtn>
-          </div>
+          <NavContainer>
+            {navItems.map((item, index) => (
+              <NavBtn key={index} onClick={item.onClick}>
+                {item.label}
+              </NavBtn>
+            ))}
+          </NavContainer>
         </HeaderWrap>
       )}
     </>
@@ -64,6 +64,11 @@ const HeaderWrap = styled.div`
   z-index: 100;
   padding: 0px 20px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.23);
+`;
+
+const NavContainer = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const NavBtn = styled.button`
