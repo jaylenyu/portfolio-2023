@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { styled } from 'styled-components';
 
 const AboutMe: FC = () => {
-  return <AboutMeContainer>AboutMe </AboutMeContainer>;
+  return <AboutMeContainer>About Me </AboutMeContainer>;
 };
 
 export default AboutMe;
