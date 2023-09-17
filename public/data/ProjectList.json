@@ -5,10 +5,10 @@
       "name": "NIS",
       "img": "/images/nis.png",
       "title": "Frontend Developer | ",
-      "date": "2023.09.03 ~ 개발중",
+      "date": "2023.09.11 ~ 2023.09.17",
       "skill": ["TypeScript", "Next.js", "Tailwind CSS", "Styled-Components"],
-      "contents": ["SSR, 반응형 레이아웃"],
-      "url": "https://github.com/"
+      "contents": ["메인페이지 SSG구현 및 국가 세부페이지 SSG와 ISR사용","Google Map API 연동 및 구현","이미지 렌더링 최적화, 메타태그 SEO 최적화 및 검색바 사용자경험 최적화"],
+      "url": "https://github.com/jaylenyu/nis-project/"
     },
     {
       "id": 2,
